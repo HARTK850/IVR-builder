@@ -69,11 +69,13 @@
             --border-color: rgba(255, 255, 255, 0.1);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            /* משתנים שהיו חסרים וגרמו לבעיות עיצוב באפקטים */
+            --yemot-accent: #38bdf8;
+            --yemot-primary: #0ea5e9;
         }
-
         body {
             background-color: var(--bg-main);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.15), transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
             color: var(--text-main);
@@ -82,7 +84,6 @@
             display: flex;
             flex-direction: column;
         }
-
         /* Glassmorphism Classes */
         .glass-panel {
             background: var(--bg-panel);
@@ -91,7 +92,6 @@
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
-
         .glass-button {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -103,27 +103,25 @@
             border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-1px);
         }
-
         .glass-input {
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
             transition: all 0.3s ease;
+            /* תיקון כיווניות כך שמספרים לא יקפצו אחורה בתוך אתר מימין-לשמאל */
+            direction: ltr;
         }
-
         .glass-input:focus {
             outline: none;
             border-color: var(--yemot-accent);
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
         }
-
         /* סרגל ניווט צדדי */
         .sidebar-item {
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-
         .sidebar-item::before {
             content: '';
             position: absolute;
@@ -136,36 +134,31 @@
             transition: transform 0.3s ease;
             transform-origin: center;
         }
-
         .sidebar-item.active {
             background: linear-gradient(to left, rgba(56, 189, 248, 0.1), transparent);
             color: white;
         }
-
         .sidebar-item.active::before {
             transform: scaleY(1);
         }
-
         .sidebar-item:hover:not(.active) {
             background: rgba(255, 255, 255, 0.05);
         }
-
         /* Scrollbar מותאם */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.5); 
+            background: rgba(15, 23, 42, 0.5);
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2); 
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.3); 
+            background: rgba(255, 255, 255, 0.3);
         }
-
         /* אנימציות וטעינה */
         .loader-ring {
             display: inline-block;
@@ -187,7 +180,6 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         .step-active {
             border-color: var(--yemot-accent);
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
@@ -201,7 +193,6 @@
             opacity: 0.5;
             filter: grayscale(1);
         }
-
         /* Editor Container */
         #editor-container {
             border: 1px solid var(--border-color);
@@ -214,7 +205,6 @@
             background: #1e1e1e;
             border-bottom: 1px solid #333;
         }
-
         /* טבלאות */
         .yemot-table {
             width: 100%;
@@ -237,7 +227,6 @@
         .yemot-table tr:hover td {
             background: rgba(255,255,255,0.02);
         }
-
         /* מודאלים */
         .modal-overlay {
             background: rgba(2, 6, 23, 0.85);
